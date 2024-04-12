@@ -28,9 +28,9 @@ const translations = {
         'post1-title': 'Olá e bem-vindo ao alexpenman.com.au !!',
         'post1-content': 'Olá e bem-vindo ao alexpenman.com.au !!'
     
-    },
+    };
     
-    ''
+
 
 
 
