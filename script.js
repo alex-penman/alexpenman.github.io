@@ -23,7 +23,44 @@ const translations = {
     'pt': {         
         'post1-title': 'Olá e bem-vindo ao alexpenman.com.au !!',
         'post1-content': 'Olá e bem-vindo ao alexpenman.com.au !!'
-    }
+    },
+    'ne': {
+        'post1-title': 'Nederlands !!',
+        'post1-content': 'Nederlands !!'
+    },
+    'zh': {
+        'post1-title': '你好，欢迎来到alexpenman.com.au !!',
+        'post1-content': '你好，欢迎来到alexpenman.com.au !!'
+    },
+    'ja': {
+        'post1-title': 'こんにちは、alexpenman.com.auへようこそ !!',
+        'post1-content': 'こんにちは、alexpenman.com.auへようこそ !!'
+    },
+    'ko': {
+        'post1-title': '안녕하세요, alexpenman.com.au에 오신 것을 환영합니다 !!',
+        'post1-content': '안녕하세요, alexpenman.com.au에 오신 것을 환영합니다 !!'
+    },
+    'ru': {
+        'post1-title': 'Привет и добро пожаловать на alexpenman.com.au !!',
+        'post1-content': 'Привет и добро пожаловать на alexpenman.com.au !!'
+    },
+    'ar': {
+        'post1-title': 'مرحبًا بكم في alexpenman.com.au !!',
+        'post1-content': 'مرحبًا بكم في alexpenman.com.au !!'
+    },
+    'hi': {
+        'post1-title': 'नमस्ते और alexpenman.com.au में आपका स्वागत है !!',
+        'post1-content': 'नमस्ते और alexpenman.com.au में आपका स्वागत है !!'
+    },
+    'sv': {
+        'post1-title': 'Hej och välkommen till alexpenman.com.au !!',
+        'post1-content': 'Hej och välkommen till alexpenman.com.au !!'
+    },
+    'po': {
+        'post1-title': 'Cześć i witaj na alexpenman.com.au !!',
+        'post1-content': 'Cześć i witaj na alexpenman.com.au !!'
+    },
+    
 };
 
 // Function to change the language of the page
