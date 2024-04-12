@@ -7,34 +7,24 @@ const translations = {
     'es': {
         'post1-title': 'Hola y bienvenido a alexpenman.com.au!!',
         'post1-content': 'Hola y bienvenido a alexpenman.com.au!!.'
-        
     },
     'fr': { 
-        'post1-title': 'Bonjour et bienvue sur alexpenman.com.au !!'
+        'post1-title': 'Bonjour et bienvue sur alexpenman.com.au !!',
         'post1-content': 'Bonjour et bienvenue sur alexpenman.com.au !!'            
-    
     },
     'de': {
         'post1-title': 'Hallo und willkommen bei alexpenman.com.au !!',
         'post1-content': 'Hallo und willkommen bei alexpenman.com.au !!'
-
     },
     'it': {
         'post1-title': 'Ciao e benvenuto su alexpenman.com.au !!',
         'post1-content': 'Ciao e benvenuto su alexpenman.com.au !!'
-    
     },
     'pt': {         
         'post1-title': 'Olá e bem-vindo ao alexpenman.com.au !!',
         'post1-content': 'Olá e bem-vindo ao alexpenman.com.au !!'
-    
-    };
-    
-
-
-
-
-
+    }
+};
 
 // Function to change the language of the page
 function changeLanguage(lang) {
