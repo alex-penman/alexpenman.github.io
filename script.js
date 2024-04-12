@@ -24,3 +24,4 @@ langEl.forEach(el => {
         document.documentElement.lang = el.id;
     });
 });
+
