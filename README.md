@@ -1,3 +1,2 @@
 # alexpenman.github.io
-The many Alexs
-saddad
+The man of the pen and a man of many languages
