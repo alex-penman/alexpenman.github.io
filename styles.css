@@ -2,12 +2,36 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#language-selection button {
-    margin: 10px;
-    padding: 5px 10px;
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.lang-btn {
     cursor: pointer;
 }
 
-.content {
-    margin-top: 20px;
+main {
+    padding: 20px;
+}
+
+article {
+    background-color: #f4f4f4;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
 }
