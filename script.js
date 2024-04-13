@@ -77,7 +77,7 @@ const translations = {
         'post1-title': 'Γεια και καλώς ήρθατε στο alexpenman.com.au !!',
         'post1-content': 'Γεια και καλώς ήρθατε στο alexpenman.com.au !!'
     },
-    'in ': {
+    'in': {
         'post1-title': 'Selamat datang di vlognya',
         'post1-content': 'Selamat datang di vlognya'           
     },
