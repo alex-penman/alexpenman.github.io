@@ -1,3 +1,7 @@
+console.log('Script is running');
+
+// Rest of your code...
+
 // Define an object containing translations for each key in different languages
 const translations = {
     'en': {
@@ -88,35 +92,20 @@ const translations = {
     
 };
 
-// Get the selected language from the local storage 
-const lang = localStorage.getItem('lang') || 'en';
-changeLanguage(lang);
+
 
 // Object with YouTube videos for each language
 const videos = {
-    'fr': {url: 'https://www.youtube.com/embed/lpRsjtbsdeU&list=PLZKXrLIMrZOmQnrI3nCD-svIfK_290_p4', title: 'LanglaisPlusFacile'},
-    'it': {url: 'https://www.youtube.com/embed/rJ1O_MzGoYo', title: 'ZeroViewsItalian'},
-    'es': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsSpanish'},
-    'de': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsGerman'},
-    'pt': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsPortuguese'},
-    'ne': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsDutch'},
-    'zh': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsChinese'},
-    'ja': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsJapanese'},
-    'ko': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsKorean'},
-    'ru': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsRussian'},
-    'ar': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsArabic'},
-    'hi': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsHindi'},
-    'sv': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsSwedish'},
-    'po': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsPolish'},
-    'da': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsDanish'},
-    'no': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsNorwegian'},
-    'he': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsHebrew'},
-    'gr': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsGreek'},
-    'in': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsIndonesian'},
-    'tu': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsTurkish'},
-
-    // Add the rest of the languages here...
+    'en': 'https://www.youtube.com/embed/vmEuTH3E3FE&t=1s',
+    'es': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'fr': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    'de': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    // ... add more languages here ...
 };
+
+// Get the selected language from the local storage 
+const lang = localStorage.getItem('lang') || 'en';
+changeLanguage(lang);
 
 function changeLanguage(lang) {
     // Find all elements with a data-key attribute
@@ -130,28 +119,18 @@ function changeLanguage(lang) {
     // Look up the video for the selected language
     const video = videos[lang];
     if (video) {
-        addYoutubeVideo(video.url, video.title);
-    } else {
-        removeYoutubeVideo('LanglaisPlusFacile');
+        updateYoutubeVideo(video.url, 'video1');
     }
-
-    if (lang === 'it') {
-        addYoutubeVideo('https://www.youtube.com/embed/rJ1O_MzGoYo', 'ZeroViewsItalian');
-    } else {
-        removeYoutubeVideo('ZeroViewsItalian');
-    }
-<<<<<<< HEAD
-
-    if (lang === 'es') {
-        addYoutubeVideo('https://www.youtube.com/shorts/psxgdRoEPco', 'UnPocoDeLaHistoriaDeLaLenguaInglesa');
-    } else {
-        removeYoutubeVideo('UnPocoDeLaHistoriaDeLaLenguaInglesa');
-    }
-=======
->>>>>>> parent of a6eaeb8 (Spanish vid)
 }
 
-function addYoutubeVideo(url, containerId) {
+function updateYoutubeVideo(url, containerId) {
+    // Remove any existing video
+    const container = document.getElementById(containerId);
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+    // Add the new video
     var iframe = document.createElement('iframe');
     iframe.setAttribute('width', '560');
     iframe.setAttribute('height', '315');
@@ -161,16 +140,7 @@ function addYoutubeVideo(url, containerId) {
     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
     iframe.setAttribute('allowfullscreen', '');
 
-    // Replace 'container' with the id of the HTML element where you want to add the video
-    document.getElementById(containerId).appendChild(iframe);
-}
-
-function removeYoutubeVideo(containerId) {
-    // Remove the YouTube video when a language other than French is selected
-    const container = document.getElementById(containerId);
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
+    container.appendChild(iframe);
 }
 
 // The modified code to add event listeners to the buttons
@@ -178,6 +148,7 @@ document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
         e.preventDefault();  // Stop the default behavior
         var lang = this.id;
+        console.log('Button clicked, language:', lang);  // Add this line
         changeLanguage(lang);
     });
 });
