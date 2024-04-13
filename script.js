@@ -157,6 +157,12 @@ function changeLanguage(lang) {
         // Add the iframe to the video container
         videoContainer.appendChild(iframe);
     }
+
+    document.querySelectorAll('.language-button').forEach(button => {
+        button.addEventListener('click', function() {
+          changeLanguage(this.dataset.language);
+        });
+      });
     // Save the selected language in the local storage
     localStorage.setItem('lang', lang);
 }
