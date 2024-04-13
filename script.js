@@ -87,8 +87,6 @@ const translations = {
     },
     
 };
-
-
 // Function to change the language of the page
 function changeLanguage(lang) {
     // Find all elements with a data-key attribute
@@ -101,43 +99,37 @@ function changeLanguage(lang) {
 
     // Add the YouTube video when the French language is selected
     if (lang === 'fr') {
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('width', '560');
-        iframe.setAttribute('height', '315');
-        iframe.setAttribute('src', 'https://www.youtube.com/embed/lpRsjtbsdeU&list=PLZKXrLIMrZOmQnrI3nCD-svIfK_290_p4');
-        iframe.setAttribute('title', 'YouTube video player');
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-
-        // Replace 'container' with the id of the HTML element where you want to add the video
-        document.getElementById('LanglaisPlusFacile').appendChild(iframe);
+        addYoutubeVideo('https://www.youtube.com/embed/lpRsjtbsdeU&list=PLZKXrLIMrZOmQnrI3nCD-svIfK_290_p4', 'LanglaisPlusFacile');
     } else {
-        // Remove the YouTube video when a language other than French is selected
-        const container = document.getElementById('LanglaisPlusFacile');
-        while (container.firstChild) {
-            container.removeChild(container.firstChild);
-        }
+        removeYoutubeVideo('LanglaisPlusFacile');
     }
 
     if (lang === 'it') {
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('width', '560');
-        iframe.setAttribute('height', '315');
-        iframe.setAttribute('src', 'https://www.youtube.com/embed/rJ1O_MzGoYo');
-        iframe.setAttribute('title', 'YouTube video player');
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-
-        // Replace 'container' with the id of the HTML element where you want to add the video
-        document.getElementById('ZeroViewsItalian').appendChild(iframe);
+        addYoutubeVideo('https://www.youtube.com/embed/rJ1O_MzGoYo', 'ZeroViewsItalian');
     } else {
-        // Remove the YouTube video when a language other than Italian is selected
-        const container = document.getElementById('ZeroViewsItalian');
-        while (container.firstChild) {
-            container.removeChild(container.firstChild);
-        }
+        removeYoutubeVideo('ZeroViewsItalian');
+    }
+}
+
+function addYoutubeVideo(url, containerId) {
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('width', '560');
+    iframe.setAttribute('height', '315');
+    iframe.setAttribute('src', url);
+    iframe.setAttribute('title', 'YouTube video player');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+
+    // Replace 'container' with the id of the HTML element where you want to add the video
+    document.getElementById(containerId).appendChild(iframe);
+}
+
+function removeYoutubeVideo(containerId) {
+    // Remove the YouTube video when a language other than French is selected
+    const container = document.getElementById(containerId);
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
 }
 
