@@ -132,37 +132,49 @@ function changeLanguage(lang) {
     if (video) {
         addYoutubeVideo(video.url, video.title);
     } else {
-        // Assuming 'video-container' is the id of the HTML element where you want to add the video
-        document.getElementById('video-container').innerHTML = '';
-    }
-    function addYoutubeVideo(url, title) {
-        // Assuming 'video-container' is the id of the HTML element where you want to add the video
-        const videoContainer = document.getElementById('video-container');
-    
-        // Create an iframe for the YouTube video
-        const iframe = document.createElement('iframe');
-        iframe.src = url;
-        iframe.title = title;
-        iframe.width = 560; // Set the width
-        iframe.height = 315; // Set the height
-        iframe.frameBorder = 0;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-    
-        // Remove all child nodes from the video container
-        while (videoContainer.firstChild) {
-            videoContainer.removeChild(videoContainer.firstChild);
-        }
-    
-        // Add the iframe to the video container
-        videoContainer.appendChild(iframe);
+        removeYoutubeVideo('LanglaisPlusFacile');
     }
 
-    document.querySelectorAll('.language-button').forEach(button => {
-        button.addEventListener('click', function() {
-          changeLanguage(this.dataset.language);
-        });
-      });
-    // Save the selected language in the local storage
-    localStorage.setItem('lang', lang);
+    if (lang === 'it') {
+        addYoutubeVideo('https://www.youtube.com/embed/rJ1O_MzGoYo', 'ZeroViewsItalian');
+    } else {
+        removeYoutubeVideo('ZeroViewsItalian');
+    }
+
+    if (lang === 'es') {
+        addYoutubeVideo('https://www.youtube.com/shorts/psxgdRoEPco', 'UnPocoDeLaHistoriaDeLaLenguaInglesa');
+    } else {
+        removeYoutubeVideo('UnPocoDeLaHistoriaDeLaLenguaInglesa');
+    }
 }
+
+function addYoutubeVideo(url, containerId) {
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('width', '560');
+    iframe.setAttribute('height', '315');
+    iframe.setAttribute('src', url);
+    iframe.setAttribute('title', 'YouTube video player');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+
+    // Replace 'container' with the id of the HTML element where you want to add the video
+    document.getElementById(containerId).appendChild(iframe);
+}
+
+function removeYoutubeVideo(containerId) {
+    // Remove the YouTube video when a language other than French is selected
+    const container = document.getElementById(containerId);
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
+// The modified code to add event listeners to the buttons
+document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();  // Stop the default behavior
+        var lang = this.id;
+        changeLanguage(lang);
+    });
+});
