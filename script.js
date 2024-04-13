@@ -119,7 +119,7 @@ function changeLanguage(lang) {
     // Look up the video for the selected language
     const video = videos[lang];
     if (video) {
-        updateYoutubeVideo(video.url, 'video1');
+        updateYoutubeVideo(video, 'video1');
     }
 }
 
