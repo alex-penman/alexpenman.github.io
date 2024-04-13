@@ -114,6 +114,7 @@ function changeLanguage(lang) {
         addYoutubeVideo('https://www.youtube.com/shorts/psxgdRoEPco', 'UnPocoDeLaHistoriaDeLaLenguaInglesa');
     } else {
         removeYoutubeVideo('UnPocoDeLaHistoriaDeLaLenguaInglesa');
+    }
 }
 
 function addYoutubeVideo(url, containerId) {
