@@ -111,10 +111,113 @@ function changeLanguage(lang) {
     }
 
     if (lang === 'es') {
-        addYoutubeVideo('https://www.youtube.com/shorts/psxgdRoEPco', 'UnPocoDeLaHistoriaDeLaLenguaInglesa');
+        addYoutubeVideo('https://www.youtube.com/shorts/UcS5G36fZSE', 'UnPocoDeLaHistoriaDeLaLenguaInglesa');
     } else {
         removeYoutubeVideo('UnPocoDeLaHistoriaDeLaLenguaInglesa');
     }
+
+    if (lang === 'de') {
+        addYoutubeVideo('https://www.youtube.com/embed/7JXGw5e4Z0s', 'LearnGerman');
+    } else {
+        removeYoutubeVideo('LearnGerman');
+    }
+
+    if (lang === 'pt') {
+        addYoutubeVideo('https://www.youtube.com/embed/4Y5jG8STm2Y', 'LearnPortuguese');
+    } else {
+        removeYoutubeVideo('Learn Portuguese');
+    }
+
+    if (lang === 'ne') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnDutch');
+    } else {
+        removeYoutubeVideo('LearnDutch');
+    }
+
+    if (lang === 'zh') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnChinese');
+    } else {
+        removeYoutubeVideo('LearnChinese');
+    }
+
+    if (lang === 'ja') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnJapanese');
+    } else {
+        removeYoutubeVideo('LearnJapanese');
+    }
+
+    if (lang === 'ko') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnKorean');
+    } else {
+        removeYoutubeVideo('LearnKorean');
+    }
+
+    if (lang === 'ru') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnRussian');
+    } else {
+        removeYoutubeVideo('RussianWithBeFluent');
+    }
+
+    if (lang === 'ar') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'ArabicWithMaha');
+    } else {
+        removeYoutubeVideo('ArabicWithMaha');
+    }
+
+    if (lang === 'hi') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'HindiWithAwal');
+
+    if (lang === 'sv') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'SwedishWithLucas');
+    } else {
+        removeYoutubeVideo('SwedishWithLucas');
+    }
+
+    if (lang === 'po') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'PolishWithPiotr');
+    } else {
+        removeYoutubeVideo('PolishWithPiotr');
+    }
+
+    if (lang === 'da') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'DanishWithMorten');
+    } else {
+        removeYoutubeVideo('DanishWithMorten');
+    }
+
+    if (lang === 'no') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'NorwegianWithArnt');
+    } else {
+        removeYoutubeVideo('NorwegianWithArnt');
+    }
+
+    if (lang === 'he') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'HebrewWithGuy');
+    } else {
+        removeYoutubeVideo('HebrewWithGuy');
+    }
+
+    if (lang === 'gr') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'GreekWithDanae');
+    } else {
+        removeYoutubeVideo('GreekWithDanae');
+    }
+
+    if (lang === 'in') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'IndonesianWithFira');
+    } else {
+        removeYoutubeVideo('IndonesianWithFira');
+    }
+
+    if (lang === 'tu') {
+        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'TurkishWithDeniz');
+    } else {
+        removeYoutubeVideo('TurkishWithDeniz');
+    }
+
+    // Save the selected language in the local storage
+    localStorage.setItem('lang', lang);
+
 }
 
 function addYoutubeVideo(url, containerId) {
