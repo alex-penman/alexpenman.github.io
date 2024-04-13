@@ -140,12 +140,15 @@ function changeLanguage(lang) {
     } else {
         removeYoutubeVideo('ZeroViewsItalian');
     }
+<<<<<<< HEAD
 
     if (lang === 'es') {
         addYoutubeVideo('https://www.youtube.com/shorts/psxgdRoEPco', 'UnPocoDeLaHistoriaDeLaLenguaInglesa');
     } else {
         removeYoutubeVideo('UnPocoDeLaHistoriaDeLaLenguaInglesa');
     }
+=======
+>>>>>>> parent of a6eaeb8 (Spanish vid)
 }
 
 function addYoutubeVideo(url, containerId) {
