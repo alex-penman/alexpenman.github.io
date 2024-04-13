@@ -89,9 +89,6 @@ const translations = {
 };
 
 
-
-
-
 // Function to change the language of the page
 function changeLanguage(lang) {
     // Find all elements with a data-key attribute
@@ -118,18 +115,37 @@ function changeLanguage(lang) {
     } else {
         // Remove the YouTube video when a language other than French is selected
         const container = document.getElementById('LanglaisPlusFacile');
-            while (container.firstChild) {
-                container.removeChild(container.firstChild);
-            }
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    }
+
+    if (lang === 'it') {
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('width', '560');
+        iframe.setAttribute('height', '315');
+        iframe.setAttribute('src', 'https://www.youtube.com/embed/rJ1O_MzGoYo');
+        iframe.setAttribute('title', 'YouTube video player');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+
+        // Replace 'container' with the id of the HTML element where you want to add the video
+        document.getElementById('ZeroViewsItalian').appendChild(iframe);
+    } else {
+        // Remove the YouTube video when a language other than Italian is selected
+        const container = document.getElementById('ZeroViewsItalian');
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
         }
     }
 }
 
-// Add click event listeners to all language buttons
-document.querySelectorAll('.lang-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-        const lang = button.getAttribute('id'); // Get the language code from the button's id
-        changeLanguage(lang); // Change the page language
+// The modified code to add event listeners to the buttons
+document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();  // Stop the default behavior
+        var lang = this.id;
+        changeLanguage(lang);
     });
 });
