@@ -87,7 +87,37 @@ const translations = {
     },
     
 };
-// Function to change the language of the page
+
+// Get the selected language from the local storage 
+const lang = localStorage.getItem('lang') || 'en';
+changeLanguage(lang);
+
+// Object with YouTube videos for each language
+const videos = {
+    'fr': {url: 'https://www.youtube.com/embed/lpRsjtbsdeU&list=PLZKXrLIMrZOmQnrI3nCD-svIfK_290_p4', title: 'LanglaisPlusFacile'},
+    'it': {url: 'https://www.youtube.com/embed/rJ1O_MzGoYo', title: 'ZeroViewsItalian'},
+    'es': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsSpanish'},
+    'de': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsGerman'},
+    'pt': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsPortuguese'},
+    'ne': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsDutch'},
+    'zh': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsChinese'},
+    'ja': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsJapanese'},
+    'ko': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsKorean'},
+    'ru': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsRussian'},
+    'ar': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsArabic'},
+    'hi': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsHindi'},
+    'sv': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsSwedish'},
+    'po': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsPolish'},
+    'da': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsDanish'},
+    'no': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsNorwegian'},
+    'he': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsHebrew'},
+    'gr': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsGreek'},
+    'in': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsIndonesian'},
+    'tu': {url: 'https://www.youtube.com/embed/1JLUn2DFW4w', title: 'ZeroViewsTurkish'},
+
+    // Add the rest of the languages here...
+};
+
 function changeLanguage(lang) {
     // Find all elements with a data-key attribute
     const elements = document.querySelectorAll('[data-key]');
@@ -97,156 +127,36 @@ function changeLanguage(lang) {
         element.textContent = translations[lang][key];
     });
 
-    // Add the YouTube video when the French language is selected
-    if (lang === 'fr') {
-        addYoutubeVideo('https://www.youtube.com/embed/lpRsjtbsdeU&list=PLZKXrLIMrZOmQnrI3nCD-svIfK_290_p4', 'LanglaisPlusFacile');
+    // Look up the video for the selected language
+    const video = videos[lang];
+    if (video) {
+        addYoutubeVideo(video.url, video.title);
     } else {
-        removeYoutubeVideo('LanglaisPlusFacile');
+        // Assuming 'video-container' is the id of the HTML element where you want to add the video
+        document.getElementById('video-container').innerHTML = '';
     }
-
-    if (lang === 'it') {
-        addYoutubeVideo('https://www.youtube.com/embed/rJ1O_MzGoYo', 'ZeroViewsItalian');
-    } else {
-        removeYoutubeVideo('ZeroViewsItalian');
+    function addYoutubeVideo(url, title) {
+        // Assuming 'video-container' is the id of the HTML element where you want to add the video
+        const videoContainer = document.getElementById('video-container');
+    
+        // Create an iframe for the YouTube video
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.title = title;
+        iframe.width = 560; // Set the width
+        iframe.height = 315; // Set the height
+        iframe.frameBorder = 0;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+    
+        // Remove all child nodes from the video container
+        while (videoContainer.firstChild) {
+            videoContainer.removeChild(videoContainer.firstChild);
+        }
+    
+        // Add the iframe to the video container
+        videoContainer.appendChild(iframe);
     }
-
-    if (lang === 'es') {
-        addYoutubeVideo('https://www.youtube.com/shorts/UcS5G36fZSE', 'UnPocoDeLaHistoriaDeLaLenguaInglesa');
-    } else {
-        removeYoutubeVideo('UnPocoDeLaHistoriaDeLaLenguaInglesa');
-    }
-
-    if (lang === 'de') {
-        addYoutubeVideo('https://www.youtube.com/embed/7JXGw5e4Z0s', 'LearnGerman');
-    } else {
-        removeYoutubeVideo('LearnGerman');
-    }
-
-    if (lang === 'pt') {
-        addYoutubeVideo('https://www.youtube.com/embed/4Y5jG8STm2Y', 'LearnPortuguese');
-    } else {
-        removeYoutubeVideo('Learn Portuguese');
-    }
-
-    if (lang === 'ne') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnDutch');
-    } else {
-        removeYoutubeVideo('LearnDutch');
-    }
-
-    if (lang === 'zh') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnChinese');
-    } else {
-        removeYoutubeVideo('LearnChinese');
-    }
-
-    if (lang === 'ja') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnJapanese');
-    } else {
-        removeYoutubeVideo('LearnJapanese');
-    }
-
-    if (lang === 'ko') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnKorean');
-    } else {
-        removeYoutubeVideo('LearnKorean');
-    }
-
-    if (lang === 'ru') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'LearnRussian');
-    } else {
-        removeYoutubeVideo('RussianWithBeFluent');
-    }
-
-    if (lang === 'ar') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'ArabicWithMaha');
-    } else {
-        removeYoutubeVideo('ArabicWithMaha');
-    }
-
-    if (lang === 'hi') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'HindiWithAwal');
-
-    if (lang === 'sv') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'SwedishWithLucas');
-    } else {
-        removeYoutubeVideo('SwedishWithLucas');
-    }
-
-    if (lang === 'po') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'PolishWithPiotr');
-    } else {
-        removeYoutubeVideo('PolishWithPiotr');
-    }
-
-    if (lang === 'da') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'DanishWithMorten');
-    } else {
-        removeYoutubeVideo('DanishWithMorten');
-    }
-
-    if (lang === 'no') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'NorwegianWithArnt');
-    } else {
-        removeYoutubeVideo('NorwegianWithArnt');
-    }
-
-    if (lang === 'he') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'HebrewWithGuy');
-    } else {
-        removeYoutubeVideo('HebrewWithGuy');
-    }
-
-    if (lang === 'gr') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'GreekWithDanae');
-    } else {
-        removeYoutubeVideo('GreekWithDanae');
-    }
-
-    if (lang === 'in') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'IndonesianWithFira');
-    } else {
-        removeYoutubeVideo('IndonesianWithFira');
-    }
-
-    if (lang === 'tu') {
-        addYoutubeVideo('https://www.youtube.com/embed/9JXJQgJ1B4Y', 'TurkishWithDeniz');
-    } else {
-        removeYoutubeVideo('TurkishWithDeniz');
-    }
-
     // Save the selected language in the local storage
     localStorage.setItem('lang', lang);
-
 }
-
-function addYoutubeVideo(url, containerId) {
-    var iframe = document.createElement('iframe');
-    iframe.setAttribute('width', '560');
-    iframe.setAttribute('height', '315');
-    iframe.setAttribute('src', url);
-    iframe.setAttribute('title', 'YouTube video player');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-    iframe.setAttribute('allowfullscreen', '');
-
-    // Replace 'container' with the id of the HTML element where you want to add the video
-    document.getElementById(containerId).appendChild(iframe);
-}
-
-function removeYoutubeVideo(containerId) {
-    // Remove the YouTube video when a language other than French is selected
-    const container = document.getElementById(containerId);
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-}
-
-// The modified code to add event listeners to the buttons
-document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();  // Stop the default behavior
-        var lang = this.id;
-        changeLanguage(lang);
-    });
-});
