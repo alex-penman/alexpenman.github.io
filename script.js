@@ -120,6 +120,8 @@ function changeLanguage(lang) {
     const video = videos[lang];
     if (video) {
         updateYoutubeVideo(video, 'video1');
+    } else {
+        console.log('No video found for language:', lang);
     }
 }
 
