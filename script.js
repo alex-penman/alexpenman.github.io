@@ -103,14 +103,14 @@ function changeLanguage(lang) {
         var iframe = document.createElement('iframe');
         iframe.setAttribute('width', '560');
         iframe.setAttribute('height', '315');
-        iframe.setAttribute('src', 'https://www.youtube.com/embed/VIDEO_ID');
+        iframe.setAttribute('src', 'https://www.youtube.com/embed/eMc2I0LBrHs');
         iframe.setAttribute('title', 'YouTube video player');
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
         iframe.setAttribute('allowfullscreen', '');
 
         // Replace 'container' with the id of the HTML element where you want to add the video
-        document.getElementById('container').appendChild(iframe);
+        document.getElementById('LanglaisPlusFacile').appendChild(iframe);
     }
 }
 
