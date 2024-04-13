@@ -60,6 +60,27 @@ const translations = {
         'post1-title': 'Cześć i witaj na alexpenman.com.au !!',
         'post1-content': 'Cześć i witaj na alexpenman.com.au !!'
     },
+    'da': {
+        'post1-title': 'Hej og velkommen til alexpenman.com.au !!',
+        'post1-content': 'Hej og velkommen til alexpenman.com.au !!'
+
+    },
+    'no': {
+        'post1-title': 'Hei og velkommen til alexpenman.com.au !!',
+        'post1-content': 'Hei og velkommen til alexpenman.com.au !!'
+    },
+    'he': {
+        'post1-title': 'שלום וברוך הבא ל alexpenman.com.au !!',
+        'post1-content': 'שלום וברוך הבא ל alexpenman.com.au !!'
+    },
+    'gr': {
+        'post1-title': 'Γεια και καλώς ήρθατε στο alexpenman.com.au !!',
+        'post1-content': 'Γεια και καλώς ήρθατε στο alexpenman.com.au !!'
+    },
+    'in ': {
+        'post1-title': 'Selamat datang di vlognya',
+        'post1-content': 'Selamat datang di vlognya'           
+    },
     
 };
 
