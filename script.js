@@ -81,6 +81,9 @@ const translations = {
         'post1-title': 'Selamat datang di vlognya',
         'post1-content': 'Selamat datang di vlognya'           
     },
+    'tu': {post1-title': 'Merhaba ve alexpenman.com.au\'ya hoş geldiniz !!',
+        'post1-content': 'Merhaba ve alexpenman.com.au\'ya hoş geldiniz !!'
+    },
     
 };
 
@@ -111,6 +114,11 @@ function changeLanguage(lang) {
 
         // Replace 'container' with the id of the HTML element where you want to add the video
         document.getElementById('LanglaisPlusFacile').appendChild(iframe);
+    } else {
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+        }
     }
 }
 
