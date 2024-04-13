@@ -96,10 +96,28 @@ const translations = {
 
 // Object with YouTube videos for each language
 const videos = {
-    'en': 'https://www.youtube.com/embed/vmEuTH3E3FE&t=1s',
-    'es': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'en': 'https://www.youtube.com/embed/v=vmEuTH3E3FE&t=1s',
+    'es': 'https://www.youtube.com/embed/UcS5G36fZSE',
     'fr': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     'de': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'it': 'https://www.youtube.com/embed/rJ1O_MzGoYo',
+    'pt': 'https://www.youtube.com/embed/FmMj0Qj84bI',
+    'ne': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'zh': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'ja': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'ko': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'ru': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'ar': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'hi': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'sv': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'po': 'https://www.youtube.com/embed/Mudr4WtRimg',
+    'da': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'no': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'he': 'https://www.youtube.com/embed/_tSnSN27Zy0',
+    'gr': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+    'in': 'https://www.youtube.com/embed/gTaBOPNWyCk',
+    'tu': 'https://www.youtube.com/embed/3tBqdKGiqnI',
+
     // ... add more languages here ...
 };
 
