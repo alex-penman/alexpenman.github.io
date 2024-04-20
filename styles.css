@@ -2,9 +2,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 100;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 200px auto;
+    overflow-x: hidden;
 }
 
 header, footer {
@@ -17,8 +23,19 @@ header, footer {
 }
 
 header {
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #f4f4f4;
+    grid-column: span 2;
 }
+
+header a {
+    margin: 0 10px;
+}
+
+
 
 nav a {
     color: #fff;
@@ -37,10 +54,13 @@ nav a:hover {
 }
 
 main {
+    margin-top: 100px;
+    grid-column: 2;
     padding: 20px;
 }
 
 article {
+    margin-top: auto;
     background-color: #f4f4f4;
     margin: 20px 0;
     padding: 20px;
@@ -48,4 +68,49 @@ article {
 
 footer {
     padding: 10px;
+}
+
+#banner img {
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Adjust this value as needed */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    margin: 0 10px; /* Adjust this value as needed */
+}
+
+
+
+
+.lang-btn {
+    cursor: pointer;
+    color: #000; /* Change this to your desired color */
+}
+
+#sidebar {
+    margin-top: 100px;
+    grid-column: 1;
+    background-color: #f4f4f4;
+    width: 200px;
+    padding: 20px;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+#sidebar nav ul li a {
+    color: black
+    
 }
