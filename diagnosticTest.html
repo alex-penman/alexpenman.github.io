@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Diagnostic Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>English Diagnostic Test</h1>
+    <form id="testForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <label for="q1">1. What is the past tense of "be"?</label>
+            <input type="text" id="q1" name="q1">
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <label for="q2">2. Expand the contraction "he's":</label>
+            <input type="text" id="q2" name="q2">
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <label for="q3">3. Form a question starting with "What":</label>
+            <input type="text" id="q3" name="q3">
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <label for="q4">4. Choose the correct article: "___ apple" (a/an):</label>
+            <input type="text" id="q4" name="q4">
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <label for="q5">5. What is the plural form of "cat"?</label>
+            <input type="text" id="q5" name="q5">
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <label for="q6">6. What is the possessive adjective for "we"?</label>
+            <input type="text" id="q6" name="q6">
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <label for="q7">7. Write an imperative sentence using "listen":</label>
+            <input type="text" id="q7" name="q7">
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <label for="q8">8. Complete the phrase: "Let's ___ to the park.":</label>
+            <input type="text" id="q8" name="q8">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="submitTest()">Submit Answers</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function submitTest() {
+            const answers = [
+                document.getElementById('q1').value.trim(),
+                document.getElementById('q2').value.trim(),
+                document.getElementById('q3').value.trim(),
+                document.getElementById('q4').value.trim(),
+                document.getElementById('q5').value.trim(),
+                document.getElementById('q6').value.trim(),
+                document.getElementById('q7').value.trim(),
+                document.getElementById('q8').value.trim()
+            ];
+
+            const correctAnswers = [
+                "was/were", "he is", "What", "an", "cats", "our", "Listen", "go"
+            ];
+
+            let score = 0;
+            answers.forEach((answer, index) => {
+                if (answer.toLowerCase() === correctAnswers[index].toLowerCase()) {
+                    score++;
+                }
+            });
+
+            document.getElementById('result').innerHTML = `You scored ${score} out of 8.`;
+        }
+    </script>
+</body>
+</html>
