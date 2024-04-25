@@ -7,7 +7,7 @@ const translations = {
     'index' : {
         'en': {
             'post1-title': 'Welcome to my website !!',
-            'post1-content': 'This is still a work in progress, but feel free to look around!fsfsdf'
+            'post1-content': 'Here you can find my videos, contact me and book a lesson!'
         },
         'es': {
             'post1-title': 'Hola y bienvenido a alexpenman.com.au!!',
@@ -235,3 +235,4 @@ document.querySelectorAll('.lang-btn').forEach(function(btn) {
         changeLanguage(lang);
     });
 });
+

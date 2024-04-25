@@ -3,13 +3,14 @@
 }
 
 html, body {
-    margin: 100;
+    margin: 10px;
+    margin-top:30px;
     padding: 0;
 }
 
 body {
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 200px auto 200px;
     overflow-x: hidden;
 }
 
@@ -17,7 +18,7 @@ header, footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+    background-color: transparent;
     color: #fff;
     text-align: center;
 }
@@ -27,7 +28,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: #f4f4f4;
+    background-color: transparent;
     grid-column: span 2;
 }
 
@@ -43,10 +44,14 @@ nav a {
     padding: 10px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    width: 150px;
+    
 }
 
 nav a:hover {
     background-color: #555;
+    animation: bounce 0.5s;
+    animation-iteration-count: infinite;
 }
 
 .lang-btn {
@@ -57,11 +62,16 @@ main {
     margin-top: 100px;
     grid-column: 2;
     padding: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    align-content: start;
+    flex-direction: column;
 }
 
 article {
     margin-top: auto;
-    background-color: #f4f4f4;
+    background-color: transparent;
     margin: 20px 0;
     padding: 20px;
 }
@@ -71,6 +81,9 @@ footer {
 }
 
 #banner img {
+    position: relative;
+    top: 0;
+    margin-top:0;
     z-index: 1;
     width: 100%;
     height: auto;
@@ -78,8 +91,10 @@ footer {
 }
 
 .nav-container {
+    margin-top: 5vh;
     display: flex;
     justify-content: center;
+    background-color: transparent;
 }
 
 nav {
@@ -102,15 +117,128 @@ nav a {
 
 #sidebar {
     margin-top: 100px;
+    margin-left: 0;
     grid-column: 1;
-    background-color: #f4f4f4;
+    background-color: transparent;
     width: 200px;
     padding: 20px;
+    padding-left: 0;
     min-height: 100vh;
     overflow: auto;
 }
 
 #sidebar nav ul li a {
-    color: black
+    color: white;
+    font-weight: bold;
     
+}
+
+ul {
+    list-style-type: none;
+}
+
+.ad img {
+    width: 100px; /* or any size you want */
+    height: auto; /* maintain aspect ratio */
+}
+
+.italki-image {
+    width: 100px;
+    height: auto;
+}
+
+input[type=submit] {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+input[type=submit]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#sidebar a {
+    display: inline-block;
+    background-color: darkred; /* Red background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    transition-duration: 0.4s; /* Transition effect */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#sidebar a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    animation: bounce 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.lang-btn {
+    font-weight: bold;
+    display: inline-block;
+    background-color: navy; /* Green background */
+    color: white; /* White text */
+    padding: 5px 10px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px;
+    margin-top: 10px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+.lang-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.lang-btn span.flag-icon {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#en span.flag-icon { background-image: url('flags/us.png'); }
+#es span.flag-icon { background-image: url('flags/mx.png'); }
+/* Add more flags as needed */
+
+.btn {
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#ads {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ad img {
+    max-width: 100%;
+    height: auto;
 }

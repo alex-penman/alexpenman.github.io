@@ -55,20 +55,35 @@
     <main>
         
         
-        <article id="post1">
-            <h2 data-key="about.post1-title">Blog Post Title</h2>
-            <p data-key="about.post1-content">This is a same blog post content in English LOL.</p>
-        </article>
-        <!-- More blog posts -->
+        <h1>Book an English Lesson</h1>
+
+        <h2>Lesson: prices (all prices are in USD)</h2>
+        <h3>FIRST CLASS IS HALF PRICE!!!</h3>
+        <p>Private class (Just you) = $150 casual class, $700 for 5 classes, $1300 for 10 classes  <br>
+        Small class (maximum 4 students) = $40 casual class, $180 for 5 classes<br>
+        Medium class (maximum 8 students) = $25 USD per hour, $110 for 5 classes, $210 for 10 classes <br>
+        Large class (maximum 16 students) = $15 USD per hour<br> 
+        Extra-large class (Maximum 50 students) = $5 per hour
+
+        Prices are the same for all levels.
+        </p>
+        <h2>Booking form:</h2>
+        <form id="bookingForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="lesson">Lesson size and price:</label><br>
+            <select id="lesson" name="lesson">
+                <option value="Private class">Privat Class</option>
+                <option value="Small class">Small class</option>
+                <option value="Medium class">Medium class</option>
+                <option value="Large class">Large class</option>
+            </select><br>
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date"><br>
+            <input type="submit" value="Book">
+        </form>
     
-        <div id="video1">
-        </div>
-        <div id="ZeroViewsItalian">
-        </div>
-        <div id="LearnSpanish">
-        </div>
-        <div id="LearnGerman">
-        </div>
+        <script src="booking.js"></script>
 
     </main>
     <footer>
