@@ -3,8 +3,7 @@
 }
 
 html, body {
-    margin: 10px;
-    margin-top:30px;
+    margin: 30px 10px 10px;
     padding: 0;
 }
 
@@ -70,8 +69,10 @@ main {
     flex-direction: column;
 }
 
+element.style.padding = '10px 20px';
+element.style.fontSize = '16px';
+
 article {
-    margin-top: auto;
     background-color: transparent;
     margin: 20px 0;
     padding: 20px;
@@ -104,17 +105,8 @@ nav {
     flex-wrap: wrap;
 }
 
-nav a {
-    margin: 0 10px; /* Adjust this value as needed */
-}
 
 
-
-
-.lang-btn {
-    cursor: pointer;
-    color: #000; /* Change this to your desired color */
-}
 
 #sidebar {
     margin-top: 100px;
@@ -201,8 +193,7 @@ input[type=submit]:hover {
     text-align: center; /* Centered text */
     text-decoration: none; /* Remove underline */
     font-size: 14px;
-    margin-top: 10px;
-    margin: 4px 2px;
+    margin: 10px 4px 2px;
     cursor: pointer; /* Mouse pointer on hover */
     transition-duration: 0.4s; /* Transition effect */
 }
@@ -211,18 +202,6 @@ input[type=submit]:hover {
     background-color: #45a049; /* Darker green on hover */
 }
 
-.lang-btn span.flag-icon {
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    margin-right: 5px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#en span.flag-icon { background-image: url('flags/us.png'); }
-#es span.flag-icon { background-image: url('flags/mx.png'); }
-/* Add more flags as needed */
 
 .btn {
     font-weight: bold;
@@ -237,7 +216,7 @@ input[type=submit]:hover {
     }
 }
 
-#ads {
+#adverts {
     grid-column: 3;
     display: flex;
     flex-direction: column;
@@ -245,7 +224,7 @@ input[type=submit]:hover {
     justify-content: center;
 }
 
-#ad img {
+#advert img {
     max-width: 100%;
     height: auto;
 }

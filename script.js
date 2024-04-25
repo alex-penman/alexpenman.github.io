@@ -1,16 +1,15 @@
 console.log('Script is running');
 
-// Rest of your code...
-
 // Define an object containing translations for each key in different languages
 const translations = {
-    'index' : {
+    
         'en': {
             'post1-title': 'Welcome to my website !!',
-            'post1-content': 'Here you can find my videos, contact me and book a lesson!'
+            'post1-content': 'Here you can find my videos, contact me and book a lesson!',
+            'dateGame-button': 'Play Date Game'
         },
         'es': {
-            'post1-title': 'Hola y bienvenido a alexpenman.com.au!!',
+            'post1-title': 'Hola ydddddd bienvenido a alexpenman.com.au!!',
             'post1-content': 'Hola y bienvenido a alexpenman.com.au!!.'
         },
         'fr': { 
@@ -90,96 +89,7 @@ const translations = {
             'post1-title': 'Merhaba ve alexpenman.com.au\'ya hoş geldiniz !!',
             'post1-content': 'Merhaba ve alexpenman.com.au\'ya hoş geldiniz !!'
         },
-    },  
-
-    'about' : {
-        'en': {
-            'post1-title': 'Learn about me !!',
-            'post1-content': 'About me page'
-        },
-        'es': {
-            'post1-title': 'Hola y bienvenido a alexpenman.com.au!!',
-            'post1-content': 'Hola y bienvenido a alexpenman.com.au!!.'
-        },
-        'fr': { 
-            'post1-title': 'Bonjour et bienvue sur alexpenman.com.au !!',
-            'post1-content': 'Bonjour et bienvenue sur alexpenman.com.au !!'            
-        },
-        'de': {
-            'post1-title': 'Hallo und willkommen bei alexpenman.com.au !!',
-            'post1-content': 'Hallo und willkommen bei alexpenman.com.au !!'
-        },
-        'it': {
-            'post1-title': 'Ciao e benvenuto su alexpenman.com.au !!',
-            'post1-content': 'Ciao e benvenuto su alexpenman.com.au !!'
-        },
-        'pt': {         
-            'post1-title': 'Olá e bem-vindo ao alexpenman.com.au !!',
-            'post1-content': 'Olá e bem-vindo ao alexpenman.com.au !!'
-        },
-        'ne': {
-            'post1-title': 'Nederlands !!',
-            'post1-content': 'Nederlands !!'
-        },
-        'zh': {
-            'post1-title': '你好，欢迎来到alexpenman.com.au !!',
-            'post1-content': '你好，欢迎来到alexpenman.com.au !!'
-        },
-        'ja': {
-            'post1-title': 'こんにちは、alexpenman.com.auへようこそ !!',
-            'post1-content': 'こんにちは、alexpenman.com.auへようこそ !!'
-        },
-        'ko': {
-            'post1-title': '안녕하세요, alexpenman.com.au에 오신 것을 환영합니다 !!',
-            'post1-content': '안녕하세요, alexpenman.com.au에 오신 것을 환영합니다 !!'
-        }
-    },
-    'contact' : {
-        'en': {
-            'post1-title': 'Send me a message !!',
-            'post1-content': 'This is still a work in progress, but feel free to look around!fsfsdf'
-        },
-        'es': {
-            'post1-title': 'Hola y bienvenido a alexpenman.com.au!!',
-            'post1-content': 'Hola y bienvenido a alexpenman.com.au!!.'
-        },
-        'fr': { 
-            'post1-title': 'Bonjour et bienvue sur alexpenman.com.au !!',
-            'post1-content': 'Bonjour et bienvenue sur alexpenman.com.au !!'            
-        },
-        'de': {
-            'post1-title': 'Hallo und willkommen bei alexpenman.com.au !!',
-            'post1-content': 'Hallo und willkommen bei alexpenman.com.au !!'
-        },
-        'it': {
-            'post1-title': 'Ciao e benvenuto su alexpenman.com.au !!',
-            'post1-content': 'Ciao e benvenuto su alexpenman.com.au !!'
-        },
-        'pt': {         
-            'post1-title': 'Olá e bem-vindo ao alexpenman.com.au !!',
-            'post1-content': 'Olá e bem-vindo ao alexpenman.com.au !!'
-        },
-        'ne': {
-            'post1-title': 'Nederlands !!',
-            'post1-content': 'Nederlands !!'
-        },
-        'zh': {
-            'post1-title': '你好，欢迎来到alexpenman.com.au !!',
-            'post1-content': '你好，欢迎来到alexpenman.com.au !!'
-        },
-        'ja': {
-            'post1-title': 'こんにちは、alexpenman.com.auへようこそ !!',
-            'post1-content': 'こんにちは、alexpenman.com.auへようこそ !!'
-        },
-        'ko': {
-            'post1-title': '안녕하세요, alexpenman.com.au에 오신 것을 환영합니다 !!',
-            'post1-content': '안녕하세요, alexpenman.com.au에 오신 것을 환영합니다 !!'
-        }
-    },
-    
-    
-}
-
+    }  
 
 
 
@@ -200,39 +110,16 @@ function changeLanguage(lang) {
         } else {
             console.log('No translations found for language:', lang);
         }
+        if (key === 'dateGame-button') {
+            element.textContent = translations[page][lang][key];
+            element.addEventListener('click', function() {
+                window.location.href = 'dateGame.html';
+            });
+        } else {
+            element.textContent = translations[page][lang][key];
+        }
     });
 }
 
 
-
-
-function updateYoutubeVideo(url, containerId) {
-    // Remove any existing video
-    const container = document.getElementById(containerId);
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-
-    // Add the new video
-    var iframe = document.createElement('iframe');
-    iframe.setAttribute('width', '560');
-    iframe.setAttribute('height', '315');
-    iframe.setAttribute('src', url);
-    iframe.setAttribute('title', 'YouTube video player');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-    iframe.setAttribute('allowfullscreen', '');
-
-    container.appendChild(iframe);
-}
-
-// The modified code to add event listeners to the buttons
-document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();  // Stop the default behavior
-        var lang = this.id;
-        console.log('Button clicked, language:', lang);  // Add this line
-        changeLanguage(lang);
-    });
-});
 
