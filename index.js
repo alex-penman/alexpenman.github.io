@@ -6,7 +6,7 @@ const translations = {
         'en': {
             'post1-title': 'Welcome to my website !!',
             'post1-content': 'Here you can find my videos, contact me and book a lesson!',
-            'dateGame-button': 'Play Date Game'
+            
         },
         'es': {
             'post1-title': 'Hola ydddddd bienvenido a alexpenman.com.au!!',
@@ -103,20 +103,11 @@ function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
-        const keys = key.split('.');
-        if (translations[keys[0]][lang] && translations[keys[0]][lang][keys[1]]) {
+        if (translations[key][lang] && translations[key][lang][key]) {
             // Update the text content of the element with the translation
-            element.textContent = translations[keys[0]][lang][keys[1]];
+            element.textContent = translations[key][lang][key];
         } else {
             console.log('No translations found for language:', lang);
-        }
-        if (key === 'dateGame-button') {
-            element.textContent = translations[page][lang][key];
-            element.addEventListener('click', function() {
-                window.location.href = 'dateGame.html';
-            });
-        } else {
-            element.textContent = translations[page][lang][key];
         }
     });
 }
