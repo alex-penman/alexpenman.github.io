@@ -11,7 +11,8 @@ html, body {
 body {
     display: grid;
     grid-template-columns: 200px auto 200px;
-    overflow-x: hidden;
+    overflow-x: auto;
+    overflow: auto;
 }
 
 header, footer {
@@ -137,7 +138,7 @@ ul {
     list-style-type: none;
 }
 
-.ad img {
+.adverts {
     margin-top: 0px;
     width: 100px; /* or any size you want */
     height: auto; /* maintain aspect ratio */
@@ -146,7 +147,7 @@ ul {
 
 .italki-image {
     margin-top: 0px;
-    width: 200px !important;
+    width: 200px;
     overflow: auto;
     height: auto;
     grid-column: 3;
