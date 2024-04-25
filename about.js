@@ -58,14 +58,6 @@ function changeLanguage(lang) {
         } else {
             console.log('No translations found for language:', lang);
         }
-        if (key === 'dateGame-button') {
-            element.textContent = translations[lang][key];
-            element.addEventListener('click', function() {
-                window.location.href = 'dayOfWeek.html';
-            });
-        } else {
-            element.textContent = translations[lang][key];
-        }
     });
 }
 

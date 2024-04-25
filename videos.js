@@ -43,6 +43,8 @@ const translations = {
     }
 }
 
+
+
 // Get the selected language from the local storage 
 const lang = localStorage.getItem('lang') || 'en';
 changeLanguage(lang);
@@ -61,7 +63,7 @@ function changeLanguage(lang) {
         if (key === 'dateGame-button') {
             element.textContent = translations[lang][key];
             element.addEventListener('click', function() {
-                window.location.href = 'dayOfWeek.html';
+                window.location.href = 'dateGame.html';
             });
         } else {
             element.textContent = translations[lang][key];

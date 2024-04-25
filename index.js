@@ -4,7 +4,7 @@ console.log('Script is running');
 const translations = {
     
         'en': {
-            'post1-title': 'Welcome to my website !!',
+            'post1-title': 'JAVASCRIPT IS WORKING !!',
             'post1-content': 'Here you can find my videos, contact me and book a lesson!',
             
         },
@@ -103,9 +103,9 @@ function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
-        if (translations[key][lang] && translations[key][lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
             // Update the text content of the element with the translation
-            element.textContent = translations[key][lang][key];
+            element.textContent = translations[lang][key];
         } else {
             console.log('No translations found for language:', lang);
         }
