@@ -138,13 +138,19 @@ ul {
 }
 
 .ad img {
+    margin-top: 0px;
     width: 100px; /* or any size you want */
     height: auto; /* maintain aspect ratio */
+    overflow: auto;
 }
 
 .italki-image {
-    width: 100px;
+    margin-top: 0px;
+    width: 200px !important;
+    overflow: auto;
     height: auto;
+    grid-column: 3;
+    grid-row: 2 / span 2;
 }
 
 input[type=submit] {
